@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ContentActivity extends AppCompatActivity {
@@ -15,9 +16,16 @@ public class ContentActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        String ShopName = bundle.getString("ShopName", "");
+        String shopName = bundle.getString("ShopName", "");
+        int shopImageResourceId = bundle.getInt("ShopImageResourceId");
+        String shopContent = bundle.getString("ShopContent");
 
-        TextView shop_text_view = (TextView) findViewById(R.id.shop_text_view);
-        shop_text_view.setText(ShopName);
+        ImageView content_image_view= (ImageView) findViewById(R.id.content_image_view);
+        content_image_view.setImageResource(shopImageResourceId);
+
+        TextView content_text_view = (TextView) findViewById(R.id.content_text_view);
+        content_text_view.setText(shopContent);
+
+        setTitle(shopName);
     }
 }

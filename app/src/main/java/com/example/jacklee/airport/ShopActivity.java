@@ -20,8 +20,6 @@ public class ShopActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         String airportName = bundle.getString("airportName","");
         int category = bundle.getInt("category");
-        Log.v("ShopActivity","airport: " + airportName);
-        Log.v("ShopActivity","category: " + category);
 
         ShopAdapter shopAdapter;
         ListView listView = (ListView)findViewById(R.id.shop_list_view);
@@ -32,12 +30,10 @@ public class ShopActivity extends AppCompatActivity {
             switch(category){
                 case 1:
                     ArrayList<Airport.Shop> tianJinBuyShops = new ArrayList<Airport.Shop>();
-                    tianJinBuyShops.add(TianJin.new Shop("Nike"));
-                    tianJinBuyShops.add(TianJin.new Shop("Adidas"));
+                    tianJinBuyShops.add(TianJin.new Shop("Nike", R.drawable.nike,"The First Nike Airport AR Shop"));
+                    tianJinBuyShops.add(TianJin.new Shop("Adidas", R.drawable.adidas, "The First Adidas Airport AR shop "));
 
                     shopAdapter = new ShopAdapter(this, tianJinBuyShops);
-
-
                     listView.setAdapter(shopAdapter);
                     break;
 
@@ -47,7 +43,6 @@ public class ShopActivity extends AppCompatActivity {
                     tianJinEatShop.add(TianJin.new Shop("McDonald"));
 
                     shopAdapter = new ShopAdapter(this, tianJinEatShop);
-
                     listView.setAdapter(shopAdapter);
                     break;
 

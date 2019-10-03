@@ -8,17 +8,22 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="210dp"
         android:scaleType="centerCrop"
         android:src="@drawable/tianjin"
-        android:layout_below="@id/linear_layout"/>
+        android:id="@+id/image_view" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/linear_layout"
-        >
+        android:layout_below="@id/image_view">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
 
         <TextView
             android:id="@+id/buyshop_text_view"
@@ -28,11 +33,13 @@
             android:text="Shopping Store"
             android:textSize="16sp"
             android:background="?android:attr/selectableItemBackground"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/darker_gray"/>
+
         <TextView
             android:id="@+id/eatshop_text_view"
             android:layout_width="match_parent"
@@ -57,6 +64,12 @@
             android:textSize="16sp"
             android:background="?android:attr/selectableItemBackground"
             android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
     </LinearLayout>
 
 

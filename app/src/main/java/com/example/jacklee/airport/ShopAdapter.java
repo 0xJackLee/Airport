@@ -27,18 +27,19 @@ public class ShopAdapter extends ArrayAdapter<Airport.Shop> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
 
         }
-        final Airport.Shop currentCityShop = getItem(position);
+        final Airport.Shop currentAirportShop = getItem(position);
         TextView textView = (TextView)listItemView.findViewById(R.id.text_view);
-        textView.setText(currentCityShop.getShopName());
+        textView.setText(currentAirportShop.getShopName());
 
         textView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), ContentActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("ShopName", currentCityShop.getShopName());
+                bundle.putString("ShopName", currentAirportShop.getShopName());
+                bundle.putInt("ShopImageResourceId", currentAirportShop.getImageResourceId());
+                bundle.putString("ShopContent", currentAirportShop.getContent());
                 intent.putExtras(bundle);
-
                 getContext().startActivity(intent);
             }
         });

@@ -4,14 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ContentActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:src="@drawable/nike"
+        android:scaleType="centerCrop"
+        android:id="@+id/content_image_view"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="88dp"
         android:text="ShopName"
-        android:gravity="center"
-        android:id="@+id/shop_text_view"
+        android:id="@+id/content_text_view"
+        android:textSize="20sp"
         android:background="?actionBarItemBackground"/>
+
+
 
 </LinearLayout>
